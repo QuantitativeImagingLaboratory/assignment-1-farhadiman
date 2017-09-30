@@ -7,6 +7,10 @@ height, width, channels = image.shape
         size = my,mx, 3
         m = np.zeros(size, dtype=np.uint8)
         
+ Afterwards, we ccan find the nearest neighbor in source image using the round image:
+ 
+ m [px,py]=   image [int(round(px/float(fx))),int(round(py/float(fy)))]
+        
 ---------------------------------------------------------------------------------------------------------------
 bilinear_interpolation:
 
