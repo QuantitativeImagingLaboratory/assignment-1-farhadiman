@@ -2,13 +2,7 @@ nearest neighbor interpolation :
 
 Firstly, an image with new dimensions is created as follows:
 
-height, width, channels = image.shape 
-        mx =int( width * float(fy))
-        my = int(height *float (fx))
-        size = my,mx, 3
-        m = np.zeros(size, dtype=np.uint8)
-Afterwards, the nearest neighbor pixel in source image can be found using the round function as follows:
-m [px,py]=   image [int(round(px/float(fx))),int(round(py/float(fy)))]
+height, width, channels = image.shape mx =int( width * float(fy)) my = int(height *float (fx)) size = my,mx, 3 m = np.zeros(size, dtype=np.uint8) Afterwards, the nearest neighbor pixel in source image can be found using the round function as follows: m [px,py]= image [int(round(px/float(fx))),int(round(py/float(fy)))]
 ---------------------------------------------------------------------------------------------------------------
 bilinear_interpolation:
 
