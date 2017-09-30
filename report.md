@@ -4,7 +4,9 @@ Firstly, an image with new dimensions is created as follows:
 height, width, channels = image.shape
         mx =int( width * float(fy))
         my = int(height *float (fx))
-       
+        size = my,mx, 3
+        m = np.zeros(size, dtype=np.uint8)
+        
 ---------------------------------------------------------------------------------------------------------------
 bilinear_interpolation:
 
