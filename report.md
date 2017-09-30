@@ -36,13 +36,14 @@ height, width, channels = image.shape
                 q12y = math.ceil(py / float(fy))
                 
                 
-  Then we can apply linear interpolation horizontally between two pairs of points as follows:
+  Then, we can apply linear interpolation horizontally between two pairs of points as follows:
    ir1 = ((q22x - (px / float(fx))) * image[int(q11x), int(q11y)]) + (((px / float(fx)) - q11x) * image[int(q21x), int(q21y)])
     ir2 = ((q22x - (px / float(fx))) * image[int(q12x), int(q12y)]) + (((px / float(fx)) - q11x) * image[int(q22x), int(q22y)])
     
     Now, everything is ready to calculate second linear interpolation vertically as follows:
     fin = (((q22y - (py / float(fy)))) * ir1) + ((((py / float(fy)) - q11y)) * ir2)
                   m[px, py] = fin
+ ---------------------------------------------------------------------------------------------------------------------------------------
                   
                   
     
