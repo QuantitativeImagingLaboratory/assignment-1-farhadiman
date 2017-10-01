@@ -45,5 +45,20 @@ height, width, channels = image.shape
                   m[px, py] = fin
  ---------------------------------------------------------------------------------------------------------------------------------------
                   
-                  
+    Finding Optimal Threshold
+    
+    firstly, we initialize the optimal threhold as 127 then instead of using while loop , a for loop along with a condition to break the loop was used as follows:
+    
+     t = 127
+        m1 = 0
+        for j in range(0, 100):
+            for i in range(0, int (t)):
+              m1 = m1 + round(p[i] * i)
+            m2 = 0
+            for i in range(int (t), 255):
+                m2 = m2 + round(p[i] * i)
+            t1= (m1 + m2) / 2
+            if (t1==t):
+                break
+            t=t1
     
