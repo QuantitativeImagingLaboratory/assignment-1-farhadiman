@@ -62,3 +62,17 @@ height, width, channels = image.shape
                 break
             t=t1
     
+-----------------------------------------------------------------------------------------------------------------
+
+Binarizing:
+
+using the obtained optimal threshold, binariing the image is done as follows:
+
+        for py in range(0, h[1]):
+            for px in range(0, h[0]):
+                if (image[px,py]>threshold):
+                 bin_img[px, py]=255
+                else:
+                    bin_img[px, py] = 0
+                    
+ -------------------------------------------------------------------------------------
