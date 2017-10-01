@@ -76,3 +76,33 @@ using the obtained optimal threshold, binariing the image is done as follows:
                     bin_img[px, py] = 0
                     
  -------------------------------------------------------------------------------------
+Blob Coloring:
+
+Firstly, we create a new 2d array to hold the lable numbers based on input image
+h = image.shape
+        size = h[0], h[1], 1
+
+        temp = np.zeros(size, dtype=np.uint8)
+ then, we complement the input image
+ image=255-image
+ 
+ Now, we can detect the lable of each pixel based on its neighborhood as follows:
+ 
+                 if (image[px, py] == 0):
+                    continue
+                else:
+
+                   if (image[px,py]==255) and (image[px,py-1]==0) and (image[px-1,py]==0):
+                     temp[px,py]=k
+
+                     k=k+1
+                   if (image[px, py] == 255) and (image[px, py - 1] == 0) and (image[px - 1, py] == 255):
+                     temp[px, py]= temp[px-1, py]
+
+
+                   if (image[px, py] == 255) and (image[px, py - 1] == 255) and (image[px - 1, py] == 0):
+                     temp[px, py] = temp[px , py-1]
+                   if (image[px, py] == 255) and (image[px, py - 1] == 255) and (image[px - 1, py] == 255):
+                     temp[px, py] = temp[px, py-1]
+                     temp[px-1 , py]=temp[px , py-1]
+
