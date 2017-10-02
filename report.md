@@ -132,3 +132,17 @@ hist=[0]*1500
   
 -----------------------------------------------------------------------------------------------------------------------------
 
+Marking regions:
+
+In this section we try to assign a specific color each region. To do so we use the number of each region and a simple math.
+Suppose that all region numbers have been stored in temp array. We can use mod operator to assign a specific color each region as follows.
+ if (temp[px,py]%4==0):
+
+                     temp2[px,py]=(255,0,0)
+
+                  elif (temp[px, py] % 6 == 0):
+                         temp2[px, py] = (0, 255, 0)
+                         .
+                         .
+                         .
+ it mean that based on the number of lable and its mode result to specific numbers we can assign a specific color each region. 
