@@ -145,4 +145,4 @@ Suppose that all region numbers have been stored in temp array. We can use mod o
                          .
                          .
                          .
- it mean that based on the number of lable and its mode result to specific numbers we can assign a specific color each region. 
+ it means that based on the number of lable and its mode result to specific numbers we can assign a specific color each region. 
