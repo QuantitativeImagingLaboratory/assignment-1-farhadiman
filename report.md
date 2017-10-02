@@ -105,4 +105,30 @@ h = image.shape
                    if (image[px, py] == 255) and (image[px, py - 1] == 255) and (image[px - 1, py] == 255):
                      temp[px, py] = temp[px, py-1]
                      temp[px-1 , py]=temp[px , py-1]
+-------------------------------------------------------------------------------------------------------------------
+compute statistics:
+
+The first step in this section is to calculate how many pixels have been labled by each K.
+To do so we use a piece of code similar to calculation of histogram as follows:
+
+hist=[0]*1500
+
+        for px in range(1, h[0]):
+            for py in range(1, h[1]):
+                g=int(temp[px, py])
+                hist[g] = hist[g] + 1
+  
+  This data collected in hist array would help us to filter the regions based on their area in the next steps.
+  the next step, is to find the centroid of each region . To do so we define two array posx and posy to calculate and store the centroid of each region as follows:
+  
+          for px in range(1, h[0] - 1):
+            for py in range(1, h[1] - 1):
+                i = temp[px, py]
+                posx[int(i)] = posx[int(i)] + px
+                posy[int(i)] = posy[int(i)] + py
+                cou[int(i)] = cou[int(i)] + 1
+    
+    Now we can easily print the data of each region at the output console.
+  
+-----------------------------------------------------------------------------------------------------------------------------
 
