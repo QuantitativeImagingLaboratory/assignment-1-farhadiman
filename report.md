@@ -146,3 +146,25 @@ Suppose that all region numbers have been stored in temp array. We can use mod o
                          .
                          .
  it means that based on the number of lable and its mode result to specific numbers we can assign a specific color each region. 
+ 
+  Filtering the regions:
+  
+  Returning the hist array enables us to filter the regions based on the number of pixels as follows:
+  
+                  if (temp[px][py]!=0) and [hist[int(temp[px,py])]>15]:
+
+                  if (temp[px,py]%4==0):
+
+                     temp2[px,py]=(255,0,0)
+
+                  elif (temp[px, py] % 6 == 0):
+                         temp2[px, py] = (0, 255, 0)
+
+                  elif (temp[px, py] % 2 == 0):
+                             temp2[px, py] = (0, 0, 255)
+                             .
+                             .
+                             .
+ ---------------------------------------------------------------------------------------------------------------------------------
+ 
+
