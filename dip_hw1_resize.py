@@ -1,3 +1,4 @@
+
 """dip_hw1.py: Starter file to run howework 1"""
 
 #Example Usage: ./dip_hw1_resize -i imagename.jpg -fx 1.5 -fy = 1.5 -m nearest_neighbor
@@ -7,9 +8,13 @@ __author__      = "Pranav Mantini"
 __email__ = "pmantini@uh.edu"
 __version__ = "1.0.0"
 
+
 import cv2
+import numpy as np
 import sys
+from datetime import datetime
 from resize import resample as rs
+
 from datetime import datetime
 
 
@@ -47,8 +52,14 @@ def main():
         sys.exit(2)
     else:
         image_name = args.image.split(".")[0]
-        input_image = cv2.imread(args.image, 0)
+        input_image = cv2.imread(args.image)
 
+
+
+     #   input_image[0, 0]= 255
+
+
+   # print ("Let's talk about %s" %  input_image)
     #Check resize scale parametes
     if args.resize_x is None:
         print("Resize scale fx not specified using default (1.5)")
@@ -86,7 +97,7 @@ def main():
     #Write output file
     outputDir = 'output/resize/'
 
-    output_image_name = outputDir+image_name+interpolation+datetime.now().strftime("%m%d-%H%M%S")+".jpg"    
+    output_image_name = outputDir+image_name+interpolation+datetime.now().strftime("%m%d-%H%M%S")+".jpg"
     cv2.imwrite(output_image_name, resampled_image)
 
 
