@@ -75,8 +75,8 @@ def main():
     #blobcoloring
     cell_count_obj = cc.cell_counting()
 
-    regions,k = cell_count_obj.blob_coloring(binary_img)
-    [region,hist] = cell_count_obj.compute_statistics(regions,k)
+    regions,k,i = cell_count_obj.blob_coloring(binary_img)
+    [region,hist] = cell_count_obj.compute_statistics(regions,k,i)
 
 
     cell_stats_img = cell_count_obj.mark_regions_image(region,hist)
