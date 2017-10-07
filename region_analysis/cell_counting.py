@@ -66,14 +66,15 @@ class cell_counting:
 
         regions = temp
 
-        return regions,k
+        return regions,k,image
 
 
 
-    def compute_statistics(self, region,k):
+    def compute_statistics(self, region,k,i):
 
 
         temp=region
+
 
 
         """Compute cell statistics area and location
@@ -91,6 +92,10 @@ class cell_counting:
             cou.append(0)
 
         h = temp.shape
+        size20 = h[0], h[1], 3
+        ss = np.zeros(size20, dtype=np.uint8)
+        ss=i.copy()
+
         hist=[0]*1500
 
         for px in range(1, h[0]):
@@ -107,10 +112,15 @@ class cell_counting:
                 posy[int(i)] = posy[int(i)] + py
                 cou[int(i)] = cou[int(i)] + 1
 
+        font = cv2.FONT_HERSHEY_SIMPLEX
         for j in range(1, k):
             if (cou[j] != 0) and hist[j]>15:
                 #image[posx[j] / cou[j]][posy[j] / cou[j]] = 0
                 print "region number :" + str(j)+ " center :(" + str(posx[j] / cou[j]) + "," + str(posy[j] / cou[j]) + ") , area :   " + str(hist[j])
+                cx= int(posx[j] / cou[j])
+                cy = int(posy[j] / cou[j])
+                cv2.putText(ss, str(j),(cx,cy), font, 0.3, (255, 0, 255), 1, cv2.LINE_AA)
+
 
 
         # Please print your region statistics to stdout
@@ -118,6 +128,12 @@ class cell_counting:
         # print(stats)
 
 
+
+
+        #cv2.imshow('matrix', temp)
+        #cv2.waitKey(0)
+        cv2.imshow('Labled Regions', ss)
+        cv2.waitKey(0)
         return region,hist
 
     def mark_regions_image(self, image, hist):
@@ -158,6 +174,8 @@ class cell_counting:
                   else:
                      temp2[px, py] = (0, 255, 255)
 
-        cv2.imshow('matrix', temp2)
+        font = cv2.FONT_HERSHEY_SIMPLEX
+        #cv2.putText(temp2, 'OpenCV', (50, 250), font, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
+        cv2.imshow('Colored Regions', temp2)
         cv2.waitKey(0)
         return temp2
