@@ -1,3 +1,8 @@
+
+Attention: 
+1- I have changed 
+
+----------------------------------------------------------------------
 nearest neighbor interpolation :
 
 Firstly, an image with new dimensions is created as follows:
