@@ -11,6 +11,7 @@ Please make sure that, all my code is tested,
 ----------------------------------------------------------------------
 nearest neighbor interpolation :
 
+
 Firstly, an image with new dimensions is created as follows:
 height, width, channels = image.shape
         mx =int( width * float(fy))
