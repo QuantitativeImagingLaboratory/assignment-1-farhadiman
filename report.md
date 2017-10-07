@@ -1,6 +1,11 @@
 
 Attention: 
-1- I have changed 
+1- I have changed dip_hw1_region_analysis.py and dip_hw1_resize.py
+Please make sure that, all my code is tested,
+
+2- My program is capable to paint each region and to see that you must close the imshowed table.
+
+3- I have tested it several times please let me know if you have any proble to run the code
 
 ----------------------------------------------------------------------
 nearest neighbor interpolation :
